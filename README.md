@@ -2,28 +2,16 @@
 
 ## Contents
 
-This gist contains
 * `docker-compose.yaml` - A lightweight docker compose that doesn't include OpenSearch.
 * `philter.properties`
 * `english.json` - An policy for English names and medical conditions.
 * `french.json` - A policy for French names and medical conditions. _(It uses the same models as English right now.)_
 
-## Directory Structure
-
-The directory structure should look like:
-
-```
-- docker-compose.yaml
-- philter.properties
-- ./policies/english.json                <-- Put English policy in the `policies` directory
-- ./policies/french.json                 <-- Put French policy in the `policies` directory
-```
-
 ## Running and Sending Requests to Philter
 
-Then run `docker-compose up`.
+Run `docker-compose up`.
 
-Once the containers are running, do:
+Once the containers are running, run `test.sh` or do:
 
 **For English:**
 
