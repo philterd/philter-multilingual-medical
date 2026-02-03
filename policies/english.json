@@ -1,0 +1,35 @@
+{
+  "name": "english",
+  "identifiers": {
+    "medicalCondition": {
+      "removePunctuation": false,
+      "thresholds": {},
+      "phEyeConfiguration": {
+        "endpoint": "http://philter-ph-eye-en-medical-conditions-1:5000",
+        "timeout": 600,
+        "maxIdleConnections": 30,
+        "labels": ["DISEASE_DISORDER"]
+      }
+    },
+    "person": {
+      "removePunctuation": false,
+      "thresholds": {},
+      "phEyeConfiguration": {
+        "endpoint": "http://philter-ph-eye-en-1:5000",
+        "timeout": 600,
+        "maxIdleConnections": 30,
+        "labels": ["Person"]
+      }
+    },
+    "ssn": {
+      "ssnFilterStrategies": [
+        {
+          "filterType": "SSN",
+          "id": "3df4611d-fb21-47d8-a1e6-5a5502cbcd0b",
+          "strategy": "REDACT",
+          "redactionFormat": "{{{REDACTED-%t}}}"
+        }
+      ]
+    }
+  }
+}

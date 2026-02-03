@@ -1,0 +1,46 @@
+services:
+
+  ph-eye-en:
+    image: philterd/ph-eye:1.2.1
+    container_name: philter-ph-eye-en-1
+    ports:
+      - "5000"
+    networks:
+      - philter
+
+  ph-eye-en-medical-conditions:
+    image: philterd/ph-eye-medical-conditions:1.2.3
+    container_name: philter-ph-eye-en-medical-conditions-1
+    ports:
+      - "5000"
+    networks:
+      - philter
+
+  ph-eye-fr:
+    image: philterd/ph-eye:1.2.1
+    container_name: philter-ph-eye-fr-1
+    ports:
+      - "5000"
+    networks:
+      - philter
+
+  ph-eye-fr-medical-conditions:
+    image: philterd/ph-eye-medical-conditions:1.2.3
+    container_name: philter-ph-eye-fr-medical-conditions-1
+    ports:
+      - "5000"
+    networks:
+      - philter
+
+  philter:
+    image: philterd/philter:3.3.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./philter.properties:/opt/philter/philter.properties
+      - ./policies/:/opt/philter/policies/
+    networks:
+      - philter
+
+networks:
+  philter:

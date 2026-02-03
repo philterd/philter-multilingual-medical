@@ -1,0 +1,37 @@
+{
+  "name": "french",
+  "identifiers": {
+    "medicalCondition": {
+      "removePunctuation": false,
+      "thresholds": {},
+      "phEyeConfiguration": {
+        "endpoint": "http://philter-ph-eye-fr-medical-conditions-1:5000",
+        "timeout": 600,
+        "maxIdleConnections": 30,
+        "labels": ["DISEASE_DISORDER"]
+      }
+    },
+    "person": {
+      "removePunctuation": false,
+      "thresholds": {},
+      "phEyeConfiguration": {
+        "endpoint": "http://philter-ph-eye-fr-1:5000",
+        "timeout": 600,
+        "maxIdleConnections": 30,
+        "labels": ["Person"]
+      }
+    },
+    "identifiers": [
+      {
+      "identifierFilterStrategies": [
+        {
+          "filterType": "id",
+          "pattern": "\\d{3}-\\d{3}-\\d{3}",
+          "strategy": "REDACT",
+          "redactionFormat": "{{{REDACTED-canadian-%t}}}"
+        }
+      ]
+    }
+   ]
+  }
+}
