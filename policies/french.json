@@ -5,17 +5,17 @@
       "removePunctuation": false,
       "thresholds": {},
       "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-fr-medical-conditions-1:5000",
+        "endpoint": "http://philter-ph-eye-fr-medical-1:5000",
         "timeout": 600,
         "maxIdleConnections": 30,
-        "labels": ["DISEASE_DISORDER"]
+        "labels": ["Maladie"]
       }
     },
     "person": {
       "removePunctuation": false,
       "thresholds": {},
       "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-fr-1:5000",
+        "endpoint": "http://philter-ph-eye-fr-persons-1:5000",
         "timeout": 600,
         "maxIdleConnections": 30,
         "labels": ["Person"]

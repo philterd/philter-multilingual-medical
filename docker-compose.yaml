@@ -16,17 +16,17 @@ services:
     networks:
       - philter
 
-  ph-eye-fr:
-    image: philterd/ph-eye:1.2.1
-    container_name: philter-ph-eye-fr-1
+  ph-eye-fr-persons:
+    image: philterd/ph-eye-fr-persons:1.2.3
+    container_name: philter-ph-eye-fr-persons-1
     ports:
       - "5000"
     networks:
       - philter
 
-  ph-eye-fr-medical-conditions:
-    image: philterd/ph-eye-medical-conditions:1.2.3
-    container_name: philter-ph-eye-fr-medical-conditions-1
+  ph-eye-fr-medical:
+    image: philterd/ph-eye-fr-medical:1.2.3
+    container_name: philter-ph-eye-fr-medical-1
     ports:
       - "5000"
     networks:
