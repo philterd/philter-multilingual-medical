@@ -8,7 +8,9 @@
         "endpoint": "http://philter-ph-eye-fr-medical-1:5000",
         "timeout": 600,
         "maxIdleConnections": 30,
-        "labels": ["Maladie"]
+        "labels": [
+          "Maladie"
+        ]
       }
     },
     "person": {
@@ -18,20 +20,22 @@
         "endpoint": "http://philter-ph-eye-fr-persons-1:5000",
         "timeout": 600,
         "maxIdleConnections": 30,
-        "labels": ["Person"]
+        "labels": [
+          "Person"
+        ]
       }
     },
     "identifiers": [
       {
-      "identifierFilterStrategies": [
-        {
-          "filterType": "id",
-          "pattern": "\\d{3}-\\d{3}-\\d{3}",
-          "strategy": "REDACT",
-          "redactionFormat": "{{{REDACTED-canadian-%t}}}"
-        }
-      ]
-    }
-   ]
+        "pattern": "\\d{3}-\\d{3}-\\d{3}",
+        "identifierFilterStrategies": [
+          {
+            "filterType": "id",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-canadian-%t}}}"
+          }
+        ]
+      }
+    ]
   }
 }
