@@ -1,30 +1,46 @@
 {
   "name": "french",
   "identifiers": {
-    "medicalCondition": {
-      "removePunctuation": false,
-      "thresholds": {},
-      "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-fr-medical-1:5000",
-        "timeout": 600,
-        "maxIdleConnections": 30,
-        "labels": [
-          "Maladie"
-        ]
+    "person": [
+      {
+        "removePunctuation": false,
+        "thresholds": {},
+        "phEyeFilterStrategies": [
+          {
+            "filterType": "OTHER",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-%t}}}"
+          }
+        ],
+        "phEyeConfiguration": {
+          "endpoint": "http://philter-ph-eye-fr-medical-1:5000",
+          "timeout": 600,
+          "maxIdleConnections": 30,
+          "labels": [
+            "Maladie"
+          ]
+        }
+      },
+      {
+        "removePunctuation": false,
+        "thresholds": {},
+        "phEyeFilterStrategies": [
+          {
+            "filterType": "PERSON",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-%t}}}"
+          }
+        ],
+        "phEyeConfiguration": {
+          "endpoint": "http://philter-ph-eye-fr-persons-1:5000",
+          "timeout": 600,
+          "maxIdleConnections": 30,
+          "labels": [
+            "Person"
+          ]
+        }
       }
-    },
-    "person": {
-      "removePunctuation": false,
-      "thresholds": {},
-      "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-fr-persons-1:5000",
-        "timeout": 600,
-        "maxIdleConnections": 30,
-        "labels": [
-          "Person"
-        ]
-      }
-    },
+    ],
     "identifiers": [
       {
         "pattern": "\\d{3}-\\d{3}-\\d{3}",

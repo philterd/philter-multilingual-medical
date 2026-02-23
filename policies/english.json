@@ -1,10 +1,17 @@
 {
   "name": "english",
   "identifiers": {
-    "pheye": [
+    "person": [
       {
         "removePunctuation": false,
         "thresholds": {},
+        "phEyeFilterStrategies": [
+          {
+            "filterType": "OTHER",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-%t}}}"
+          }
+        ],
         "phEyeConfiguration": {
           "endpoint": "http://philter-ph-eye-en-1:5000",
           "timeout": 600,
@@ -17,6 +24,13 @@
       {
         "removePunctuation": false,
         "thresholds": {},
+        "phEyeFilterStrategies": [
+          {
+            "filterType": "OTHER",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-%t}}}"
+          }
+        ],
         "phEyeConfiguration": {
           "endpoint": "http://philter-ph-eye-en-medical-conditions-1:5000",
           "timeout": 600,
