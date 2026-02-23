@@ -1,5 +1,13 @@
 services:
 
+  ph-eye-hospitals:
+    image: philterd/ph-eye-hospitals:1.2.3
+    container_name: philter-ph-eye-en-1
+    ports:
+      - "5000"
+    networks:
+      - philter
+
   ph-eye-en:
     image: philterd/ph-eye:1.2.1
     container_name: philter-ph-eye-en-1
@@ -33,7 +41,7 @@ services:
       - philter
 
   philter:
-    image: philterd/philter:3.3.0
+    image: philterd/philter:3.4.0-SNAPSHOT
     ports:
       - "8080:8080"
     volumes:

@@ -1,26 +1,32 @@
 {
   "name": "english",
   "identifiers": {
-    "medicalCondition": {
-      "removePunctuation": false,
-      "thresholds": {},
-      "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-en-medical-conditions-1:5000",
-        "timeout": 600,
-        "maxIdleConnections": 30,
-        "labels": ["DISEASE_DISORDER"]
+    "pheye": [
+      {
+        "removePunctuation": false,
+        "thresholds": {},
+        "phEyeConfiguration": {
+          "endpoint": "http://philter-ph-eye-en-1:5000",
+          "timeout": 600,
+          "maxIdleConnections": 30,
+          "labels": [
+            "Person"
+          ]
+        }
+      },
+      {
+        "removePunctuation": false,
+        "thresholds": {},
+        "phEyeConfiguration": {
+          "endpoint": "http://philter-ph-eye-en-medical-conditions-1:5000",
+          "timeout": 600,
+          "maxIdleConnections": 30,
+          "labels": [
+            "DISEASE_DISORDER"
+          ]
+        }
       }
-    },
-    "person": {
-      "removePunctuation": false,
-      "thresholds": {},
-      "phEyeConfiguration": {
-        "endpoint": "http://philter-ph-eye-en-1:5000",
-        "timeout": 600,
-        "maxIdleConnections": 30,
-        "labels": ["Person"]
-      }
-    },
+    ],
     "ssn": {
       "ssnFilterStrategies": [
         {
