@@ -2,7 +2,7 @@ services:
 
   ph-eye-hospitals:
     image: philterd/ph-eye-hospitals:1.2.3
-    container_name: philter-ph-eye-en-1
+    container_name: philter-ph-eye-hospitals-1
     ports:
       - "5000"
     networks:
