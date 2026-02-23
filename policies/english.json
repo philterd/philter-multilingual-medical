@@ -13,6 +13,25 @@
           }
         ],
         "phEyeConfiguration": {
+          "endpoint": "http://philter-ph-eye-hospitals-1:5000",
+          "timeout": 600,
+          "maxIdleConnections": 30,
+          "labels": [
+            "hospital", "room number"
+          ]
+        }
+      },
+      {
+        "removePunctuation": false,
+        "thresholds": {},
+        "phEyeFilterStrategies": [
+          {
+            "filterType": "OTHER",
+            "strategy": "REDACT",
+            "redactionFormat": "{{{REDACTED-%t}}}"
+          }
+        ],
+        "phEyeConfiguration": {
           "endpoint": "http://philter-ph-eye-en-1:5000",
           "timeout": 600,
           "maxIdleConnections": 30,
