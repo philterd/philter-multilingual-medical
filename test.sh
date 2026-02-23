@@ -16,3 +16,8 @@ echo ""
 echo ""
 
 curl "http://localhost:8080/api/filter?p=french" --data "SILENC---> but 123-456-789" -H "Content-type: text/plain"
+
+echo ""
+echo ""
+
+curl "http://localhost:8080/api/filter?p=english" --data "He was in Buffalo Hospital in 1008 and then ECMC Hospital. He was in room 303." -H "Content-type: text/plain"
